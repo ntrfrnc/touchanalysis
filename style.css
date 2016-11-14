@@ -149,12 +149,14 @@ input[type="search"]:focus{
 /* Charts */
 .charts-container{
   padding-left: 10px;
-  max-height: 100vh;
+  height: 100vh;
   overflow-y:auto;
   overflow-x:hidden;
   display: flex;
   flex-direction:column;
   justify-content: center;
+/*   position: fixed; */
+/*   transform: none !important; */
 }
 .charts-container > div {
   margin-bottom:7px;
@@ -169,17 +171,25 @@ input[type="search"]:focus{
 }
 .highcharts-tooltip{
   filter: none !important;
-  font-size: 16px;
+}
+.highcharts-tooltip text{
+  font-size: 14px !important;
 }
 .highcharts-tooltip-box {
   stroke-width: 0;
   fill: transparent;
-  fill-opacity: 0.85;
+}
+.highcharts-contextbutton > *{
+  transform: translate(5px, 10px);
 }
 .highcharts-tick,
 .highcharts-axis-line,
 .highcharts-grid-line{
-  stroke: #999
+  stroke: #aaa
+}
+.highcharts-xaxis-grid .highcharts-grid-line,
+.highcharts-yaxis .highcharts-axis-line{
+  visibility:hidden;
 }
 .highcharts-crosshair-thin{
   stroke: #f33838

@@ -83,6 +83,11 @@
       credits: {
         enabled: false
       },
+      navigation: {
+        buttonOptions: {
+          verticalAlign: 'bottom'
+        }
+      },
       series: [{
           data: []
         }]
