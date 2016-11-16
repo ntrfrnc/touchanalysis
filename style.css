@@ -179,6 +179,17 @@ input[type="search"]:focus{
   stroke-width: 0;
   fill: transparent;
 }
+.highcharts-loading{
+  background-color: #f4f4f4 !important;
+  color: #000;
+  opacity: 1 !important;
+  visibility: visible;
+  display: block !important;
+}
+.highcharts-loading-hidden{
+  visibility: hidden;
+  opacity: 0 !important;
+}
 .highcharts-contextbutton > *{
   transform: translate(5px, 10px);
 }
@@ -200,6 +211,7 @@ input[type="search"]:focus{
 .sort::after,
 input[type="search"],
 .data-list-container > ul > li,
-.charts-container{
+.charts-container,
+.highcharts-loading{
   transition: all .3s ease;
 }
