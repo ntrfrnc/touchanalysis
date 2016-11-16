@@ -148,21 +148,22 @@ input[type="search"]:focus{
 
 /* Charts */
 .charts-container{
-  padding-left: 10px;
   height: 100vh;
   overflow-y:auto;
   overflow-x:hidden;
   display: flex;
   flex-direction:column;
-  justify-content: center;
 /*   position: fixed; */
 /*   transform: none !important; */
 }
 .charts-container > div {
-  margin-bottom:7px;
+  margin:4px 10px;
 }
-.charts-container > div:last-child{
-  margin-bottom:0px;
+.charts-container > div:first-child {
+  margin-top:10px;
+}
+.charts-container > div:last-child {
+  margin-bottom:10px;
 }
 .highcharts-background{
   fill: #f4f4f4;
@@ -178,6 +179,10 @@ input[type="search"]:focus{
 .highcharts-tooltip-box {
   stroke-width: 0;
   fill: transparent;
+}
+.touchpts-chart-container .highcharts-tooltip-box {
+  stroke-width: 1;
+  fill: rgb(251, 251, 251);
 }
 .highcharts-loading{
   background-color: #f4f4f4 !important;

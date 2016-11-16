@@ -210,6 +210,68 @@
         }
       });
 
+      var touchptsDataCharts = new dataChartsHandler({
+        dataList: dataList,
+        containerID: 'touchpts-chart-container',
+        filesBaseUrl: baseUrl + 'touch/',
+        dataUrlKeyName: 'touchURL',
+        dataParser: function (data) {
+          var series = [];
+
+          if (data.length < 1) {
+            return [series];
+          }
+
+          var startTime = data[0].eventTime;
+
+          for (var i = 0; i < data.length; i++) {
+            var currentTime = data[i].eventTime - startTime;
+            
+            series.push({
+              x: data[i][" x"],
+              y: data[i][" y"],
+              time: currentTime
+            });
+          }
+
+          return [series];
+        },
+        chartOptions: {
+          chart: {
+            type: 'scatter',
+            zoomType: 'xy',
+            height: 300
+          },
+          title: {
+            text: 'Touch points'
+          },
+          xAxis: {
+            title: {
+              text: 'X-axis [px]'
+            }
+          },
+          yAxis: {
+            title: {
+              text: 'Y-axis [px]'
+            }
+          },
+          legend: {
+            enabled: false
+          },
+          tooltip: {
+            formatter: function () {
+              return '<b>X:</b> ' + this.point.x + ' px<br>' +
+                     '<b>Y:</b> ' + this.point.y + ' px<br>' +
+                     '<b>Time:</b> ' + this.point.time + ' ms' +
+                     '';
+            }
+          },
+          series: [{
+              data: []
+          }]
+        }
+      });
+
       var accDataCharts = new dataChartsHandler({
         dataList: dataList,
         containerID: 'acc-chart-container',
